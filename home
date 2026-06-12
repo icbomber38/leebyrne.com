@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lee Byrne</title>
+  <meta name="description" content="Lee Byrne — hi.">
+  <meta property="og:title" content="Lee Byrne">
+  <meta property="og:description" content="Lee Byrne — hi.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #f8f7f5;
+      --fg: #1a1a1a;
+      --muted: #6b6b6b;
+    }
+
+    html { background: var(--bg); }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem;
+    }
+
+    .content {
+      max-width: 36rem;
+      width: 100%;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-out 0.2s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .wave {
+      display: inline-block;
+      margin-left: 0.5rem;
+      transform-origin: bottom right;
+      animation: wave 2.5s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+      0%, 60%, 100% { transform: rotate(0deg); }
+      10%, 30% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+    }
+
+    .bio {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      line-height: 1.4;
+      margin-bottom: 2.5rem;
+      max-width: 32rem;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
+
+    li {
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    li strong {
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    .links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .links a {
+      font-size: 0.875rem;
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(26, 26, 26, 0.2);
+      transition: text-decoration-color 0.2s ease;
+    }
+
+    .links a:hover {
+      text-decoration-color: var(--fg);
+    }
+
+    footer {
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="content">
+      <h1>hi, I'm Lee <span class="wave">👋</span></h1>
+
+      <p class="bio">I do revenue ops in healthcare by day. By 2027, I plan to do considerably less of that.</p>
+
+      <ul>
+        <li><strong>currently:</strong> counting down</li>
+        <li><strong>based in:</strong> somewhere with weather</li>
+        <li><strong>collecting:</strong> hobbies for retirement</li>
+      </ul>
+
+      <div class="links">
+        <a href="mailto:hello@leebyrne.com">email</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">linkedin</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span>leebyrne.com</span>
+    <span id="year"></span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
